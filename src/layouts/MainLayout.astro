@@ -6,6 +6,7 @@ import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/josefin-sans/400.css';
 import '@fontsource/josefin-sans/500.css';
+import Analytics from '@vercel/analytics/astro';
 
 const {
   title = 'Atma Bawana',
@@ -30,5 +31,6 @@ const {
       <slot />
     </main>
     <Footer />
+    <Analytics />
   </body>
 </html>
