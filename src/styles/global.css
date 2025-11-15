@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: theme('colors.text');
+  background-color: theme('colors.background');
+}
+
+body {
+  @apply bg-background text-text font-sans antialiased;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+.section-heading {
+  @apply text-3xl md:text-4xl font-heading text-text mb-4;
+}
+
+.section-subheading {
+  @apply text-lg text-text/70;
+}
+
+.shield-hero {
+  @apply clip-shield relative overflow-hidden bg-forest text-text-light;
+}
+
+.stat-item {
+  @apply flex flex-col items-center text-center;
+}

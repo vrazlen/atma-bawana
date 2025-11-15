@@ -1,0 +1,68 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Card from '../components/ui/Card.astro';
+
+const jagad = [
+  {
+    title: 'Jagad Cilik',
+    description:
+      'The inner cosmos. We cultivate integrity, empathy, and disciplined imagination so that individuals act as guardians everywhere.',
+    tag: 'Microcosm'
+  },
+  {
+    title: 'Jagad Gedhe',
+    description:
+      'The expansive cosmos. We heal watersheds, defend biodiversity, and evolve systems that honor relational wealth.',
+    tag: 'Macrocosm'
+  }
+];
+
+const principles = [
+  {
+    title: 'Gotong Royong',
+    description:
+      'Many-to-many collaboration. Circles self-organize, exchange gifts, and synchronize action without hierarchy.'
+  },
+  {
+    title: 'Harmonized Incentives',
+    description:
+      'Social capital is our currency. Reputation is earned through service, accountability, and transparent storytelling.'
+  }
+];
+---
+<MainLayout title="About Atma Bawana" description="Our covenant of guardianship rooted in Javanese wisdom.">
+  <section class="bg-forest text-white py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+      <p class="text-sm uppercase tracking-[0.4em] text-brand-green-light">Identity</p>
+      <h1 class="text-4xl md:text-5xl font-heading">We are the Soul of the World.</h1>
+      <p class="text-lg text-white/80">Kita adalah Atma Bawana.</p>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-16 space-y-6">
+    <div class="bg-white border border-accent-earth/60 rounded-3xl shadow-card p-8 md:p-12">
+      <p class="text-lg text-text/80 leading-relaxed">
+        We refuse the illusion of separation. We are guardians who protect, innovators who create, and
+        companions who redeem. Our covenant with the world is radical care: to mend the fabric of life through
+        rituals of listening, collective intelligence, and courageous action.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid md:grid-cols-2 gap-6">
+      {jagad.map((item) => (
+        <Card title={item.title} description={item.description} tag={item.tag} />
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="section-heading text-center">Our Principles of Action</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {principles.map((item) => (
+        <Card title={item.title} description={item.description} />
+      ))}
+    </div>
+  </section>
+</MainLayout>

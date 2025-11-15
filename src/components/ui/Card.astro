@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tag?: string;
+  href?: string;
+}
+
+const { title, description, tag, href } = Astro.props as Props;
+---
+<div class="bg-white border border-accent-earth/60 rounded-2xl shadow-card p-6 flex flex-col gap-3 h-full">
+  {tag && (
+    <span class="self-start text-xs uppercase tracking-[0.2em] text-accent-innovator font-heading">
+      {tag}
+    </span>
+  )}
+  <h3 class="text-xl font-heading text-text">{title}</h3>
+  <p class="text-text/80 text-base leading-relaxed">{description}</p>
+  {href && (
+    <a href={href} class="mt-auto text-brand-green font-heading text-sm inline-flex items-center gap-2">
+      Learn more
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7" />
+      </svg>
+    </a>
+  )}
+</div>

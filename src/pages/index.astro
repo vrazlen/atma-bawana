@@ -1,0 +1,97 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Button from '../components/ui/Button.astro';
+import Card from '../components/ui/Card.astro';
+
+const cards = [
+  {
+    title: 'Placeholder Pillar',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus.',
+    tag: 'Protect'
+  },
+  {
+    title: 'Holding Pattern',
+    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+    tag: 'Create'
+  },
+  {
+    title: 'Future Draft',
+    description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.',
+    tag: 'Redeem'
+  }
+];
+
+const stats = [
+  { label: 'Placeholder Guardians', value: '---' },
+  { label: 'Placeholder Projects', value: '--' },
+  { label: 'Placeholder Communities', value: '--' }
+];
+---
+<MainLayout
+  title="Atma Bawana — Safeguarding Our World"
+  description="Guardianship, innovation, and collective action for Memayu Hayuning Bawana."
+>
+  <section
+    class="shield-hero min-h-[75vh] flex items-center"
+    style="background-image: linear-gradient(rgba(27,34,30,0.75), rgba(27,34,30,0.75)), url('/images/hero-background.jpg'); background-size: cover; background-position: center;"
+  >
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6 py-20">
+      <p class="text-sm uppercase tracking-[0.4em] text-brand-green-light">Memayu Hayuning Bawana</p>
+      <h1 class="text-4xl md:text-6xl font-heading text-white leading-tight">
+        Safeguarding Our World. Renewing Our Soul.
+      </h1>
+      <p class="text-lg md:text-xl text-white/80">
+        Atma Bawana is a guardian covenant. We harmonize jagad cilik and jagad gedhe so that every act of
+        care becomes a ripple across the universe.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href="/get-involved" variant="primary">Join the Covenant</Button>
+        <Button href="/projects" variant="secondary">See Our Work</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <div class="bg-white rounded-3xl border border-accent-earth/60 shadow-card p-8 md:p-12 text-center">
+      <p class="text-sm uppercase tracking-[0.4em] text-accent-innovator mb-4">What is Atma Bawana?</p>
+      <h2 class="text-3xl md:text-4xl font-heading mb-4">The Soul of the World</h2>
+      <p class="text-lg text-text/80 leading-relaxed">
+        Our name evokes the living bridge between the microcosm and the macrocosm. We practice Memayu
+        Hayuning Bawana by tending jagad cilik — the human spirit — and jagad gedhe — the universe — through
+        collective guardianship.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid md:grid-cols-3 gap-6">
+      {cards.map((card) => (
+        <Card title={card.title} description={card.description} tag={card.tag} />
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-forest text-white py-14 mt-12">
+    <div class="max-w-5xl mx-auto px-4 grid gap-8 md:grid-cols-3 text-center">
+      {stats.map((stat) => (
+        <div class="stat-item" key={stat.label}>
+          <span class="text-4xl font-heading text-brand-green-light">{stat.value}</span>
+          <span class="text-sm tracking-wide uppercase text-white/70">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <div class="bg-brand-green text-white rounded-3xl p-10 text-center shadow-xl">
+      <p class="text-sm uppercase tracking-[0.4em] text-white/80">Called to Action</p>
+      <h3 class="text-3xl font-heading mb-3">Join the Perjanjian Bawana</h3>
+      <p class="text-lg text-white/80 mb-8">
+        Sign the covenant, bring your gifts, and move from concern to action to hope.
+      </p>
+      <Button href="/get-involved" variant="secondary" class="bg-transparent text-white border-white hover:bg-white hover:text-brand-green">
+        Take the Pledge
+      </Button>
+    </div>
+  </section>
+</MainLayout>

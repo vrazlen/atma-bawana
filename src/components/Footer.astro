@@ -1,0 +1,69 @@
+---
+import IconInstagram from './icons/IconInstagram.astro';
+
+const year = new Date().getFullYear();
+const navLinks = [
+  { href: '/about', label: 'About' },
+  { href: '/programs', label: 'Programs' },
+  { href: '/projects', label: 'Projects' }
+];
+const involveLinks = [
+  { href: '/get-involved', label: 'Join the Covenant' },
+  { href: '/get-involved', label: 'Take the Pledge' },
+  { href: '/contact', label: 'Contact the Circle' }
+];
+const socials = [
+  { href: 'https://www.instagram.com/atmabawana', icon: IconInstagram, label: 'Instagram' }
+];
+---
+<footer class="bg-forest text-text-light mt-16">
+  <div class="max-w-6xl mx-auto px-4 py-16 grid gap-10 md:grid-cols-4">
+    <div>
+      <p class="font-heading text-xl mb-4">Atma Bawana</p>
+      <p class="text-sm text-text-light/80 leading-relaxed">
+        We are guardians, innovators, and healers moving in harmony with jagad cilik
+        and jagad gedhe. Every action is a pledge to restore the soul of the world.
+      </p>
+      <div class="flex gap-4 mt-6">
+        {socials.map(({ href, icon: Icon, label }) => (
+          <a href={href} class="p-2 border border-white/20 rounded-full hover:bg-white/10" aria-label={label}>
+            <Icon />
+          </a>
+        ))}
+      </div>
+    </div>
+    <div>
+      <p class="font-heading text-lg mb-4">Navigate</p>
+      <ul class="space-y-2 text-sm">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="hover:text-brand-green-light">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <p class="font-heading text-lg mb-4">Get Involved</p>
+      <ul class="space-y-2 text-sm">
+        {involveLinks.map((link) => (
+          <li>
+            <a href={link.href} class="hover:text-brand-green-light">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <p class="font-heading text-lg mb-4">Contact</p>
+      <p class="text-sm text-text-light/80 mb-2">Perjanjian Bawana Circle</p>
+      <p class="text-sm text-text-light/80">placeholder@atmabawana.test</p>
+      <p class="text-sm text-text-light/80">+62-000-0000-0000</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-6 text-center text-xs text-text-light/70">
+    © {year} Atma Bawana. All rights reserved.
+  </div>
+</footer>

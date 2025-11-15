@@ -1,0 +1,20 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import GetInvolvedForm from '../components/GetInvolvedForm';
+---
+<MainLayout title="Get Involved" description="Join the Gotong Royong movement of Atma Bawana.">
+  <section class="bg-background py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+      <p class="text-sm uppercase tracking-[0.4em] text-accent-innovator">Gotong Royong</p>
+      <h1 class="text-4xl font-heading">Join the Collective</h1>
+      <p class="text-text/70">
+        Choose your path to serve. Whether you pledge, volunteer, or share a new idea, every intention adds to the
+        covenant.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 pb-20">
+    <GetInvolvedForm client:load />
+  </section>
+</MainLayout>

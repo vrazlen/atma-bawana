@@ -1,0 +1,49 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const programs = [
+  {
+    title: 'Ecological Projects',
+    description:
+      'From mangrove sanctuaries to regenerative river corridors, we organize bioregional crews that heal land and water.',
+    activities: ['Living river patrols', 'Agroforestry apprenticeships', 'Mangrove + peatland restoration']
+  },
+  {
+    title: 'Social Innovation',
+    description:
+      'We prototype systems that reward stewardship: social capital ledgers, mutual aid tech, and neighborhood laboratories.',
+    activities: ['Commons technology pilots', 'Community trust circles', 'Social-credit rituals']
+  },
+  {
+    title: 'Community Education',
+    description:
+      'Guardianship schools weave ancestral wisdom with future literacy for youth, elders, and civic leaders.',
+    activities: ['Field schools', 'Storytelling residencies', 'Guardian leadership retreats']
+  }
+];
+---
+<MainLayout title="Programs" description="Explore Atma Bawana program areas.">
+  <section class="bg-background py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+      <p class="text-sm uppercase tracking-[0.4em] text-accent-innovator">Program Areas</p>
+      <h1 class="text-4xl font-heading">Where Guardians Act</h1>
+      <p class="text-text/70">
+        Each program moves through the cycle of protect, create, redeem — ensuring communities feel agency and hope.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 pb-20 space-y-6">
+    {programs.map((program) => (
+      <article class="bg-white border border-accent-earth/60 rounded-3xl shadow-card p-8" key={program.title}>
+        <h2 class="text-2xl font-heading mb-3 text-brand-green">{program.title}</h2>
+        <p class="text-text/80 mb-4">{program.description}</p>
+        <ul class="list-disc list-inside text-text/70 space-y-1">
+          {program.activities.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </section>
+</MainLayout>
