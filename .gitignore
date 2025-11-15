@@ -4,3 +4,7 @@ node_modules
 .DS_Store
 .env
 dist/
+# media/docs kept locally
+*.pdf
+Website Design & Development Strategy.md
+atma bawana logo*.png
