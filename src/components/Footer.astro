@@ -1,5 +1,7 @@
 ---
+import IconGmail from './icons/IconGmail.astro';
 import IconInstagram from './icons/IconInstagram.astro';
+import IconWhatsApp from './icons/IconWhatsApp.astro';
 
 const year = new Date().getFullYear();
 const navLinks = [
@@ -13,6 +15,16 @@ const involveLinks = [
   { href: '/contact', label: 'Contact the Circle' }
 ];
 const socials = [
+  {
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=atmabawana@gmail.com',
+    icon: IconGmail,
+    label: 'Email'
+  },
+  {
+    href: 'https://wa.me/6281225092480',
+    icon: IconWhatsApp,
+    label: 'WhatsApp'
+  },
   { href: 'https://www.instagram.com/atmabawana', icon: IconInstagram, label: 'Instagram' }
 ];
 ---
@@ -26,7 +38,13 @@ const socials = [
       </p>
       <div class="flex gap-4 mt-6">
         {socials.map(({ href, icon: Icon, label }) => (
-          <a href={href} class="p-2 border border-white/20 rounded-full hover:bg-white/10" aria-label={label}>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 border border-white/20 rounded-full hover:bg-white/10"
+            aria-label={label}
+          >
             <Icon />
           </a>
         ))}
@@ -59,8 +77,16 @@ const socials = [
     <div>
       <p class="font-heading text-lg mb-4">Contact</p>
       <p class="text-sm text-text-light/80 mb-2">Perjanjian Bawana Circle</p>
-      <p class="text-sm text-text-light/80">placeholder@atmabawana.test</p>
-      <p class="text-sm text-text-light/80">+62-000-0000-0000</p>
+      <p class="text-sm text-text-light/80">
+        <a href="mailto:atmabawana@gmail.com" class="hover:text-brand-green-light">
+          atmabawana@gmail.com
+        </a>
+      </p>
+      <p class="text-sm text-text-light/80">
+        <a href="https://wa.me/6281225092480" class="hover:text-brand-green-light">
+          +62 812-2509-2480
+        </a>
+      </p>
     </div>
   </div>
   <div class="border-t border-white/10 py-6 text-center text-xs text-text-light/70">

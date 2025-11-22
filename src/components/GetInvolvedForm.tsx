@@ -32,7 +32,7 @@ export default function GetInvolvedForm() {
     <form
       className="bg-white border border-accent-earth/70 shadow-card rounded-3xl p-6 md:p-10 space-y-6"
       method="POST"
-      action="https://formspree.io/f/YOUR_FORM_ID"
+      action="https://formspree.io/f/mgvqkekk"
     >
       <input type="hidden" name="path" value={path} />
       <input type="hidden" name="_next" value="/thank-you" />
